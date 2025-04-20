@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "123",
+        "username": "david",
+        "password": "123",
+        "firstName": "David",
+        "lastName": "Xu",
+        "email": "Davidthehappypiggy@gmail.com",
+        "dob": "2023-02-19",
+        "role": "ADMIN"
+    },
+    {
+        "_id": "234",
+        "username": "wenjie",
+        "password": "123",
+        "firstName": "Wenjie",
+        "lastName": "Liu",
+        "email": "Davidthehappypiggy@gmail.com",
+        "dob": "1992-12-14",
+        "role": "MKT"
+    },
+    {
+        "_id": "345",
+        "username": "taiwei",
+        "password": "lwj",
+        "firstName": "Taiwei",
+        "lastName": "Cui",
+        "email": "Davidthehappypiggy@gmail.com",
+        "dob": "2001-11-06",
+        "role": "HR"
+    }
+]

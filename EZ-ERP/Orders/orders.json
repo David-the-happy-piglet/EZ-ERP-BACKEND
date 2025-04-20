@@ -1,0 +1,215 @@
+[
+    {
+        "_id": "ORD001",
+        "orderNumber": "ORD-2024-001",
+        "customer": {
+            "_id": "CUST001",
+            "companyName": "Tech Solutions Inc.",
+            "name": "John Smith",
+            "email": "john.smith@techsolutions.com",
+            "phone": "+1 (555) 123-4567",
+            "address": {
+                "street": "123 Tech Street",
+                "city": "San Francisco",
+                "state": "CA",
+                "country": "USA",
+                "zipCode": "94105"
+            }
+        },
+        "items": [
+            {
+                "productId": "PROD001",
+                "productName": "Industrial Sensor",
+                "quantity": 5,
+                "price": 299.99
+            },
+            {
+                "productId": "PROD002",
+                "productName": "Control Panel",
+                "quantity": 2,
+                "price": 499.99
+            }
+        ],
+        "totalAmount": 2499.93,
+        "status": "PROCESSING",
+        "paymentStatus": "PAID",
+        "shippingAddress": {
+            "street": "123 Tech Street",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA",
+            "zipCode": "94105"
+        },
+        "notes": "Priority shipping requested",
+        "createdAt": "2024-03-15T00:00:00.000Z",
+        "updatedAt": "2024-03-15T00:00:00.000Z"
+    },
+    {
+        "_id": "ORD002",
+        "orderNumber": "ORD-2024-002",
+        "customer": {
+            "_id": "CUST002",
+            "companyName": "Global Manufacturing Co.",
+            "name": "Sarah Johnson",
+            "email": "sarah.j@globalmfg.com",
+            "phone": "+1 (555) 987-6543",
+            "address": {
+                "street": "456 Industry Ave",
+                "city": "Chicago",
+                "state": "IL",
+                "country": "USA",
+                "zipCode": "60601"
+            }
+        },
+        "items": [
+            {
+                "productId": "PROD003",
+                "productName": "Robotic Arm",
+                "quantity": 3,
+                "price": 1999.99
+            }
+        ],
+        "totalAmount": 5999.97,
+        "status": "PENDING",
+        "paymentStatus": "PENDING",
+        "shippingAddress": {
+            "street": "456 Industry Ave",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "zipCode": "60601"
+        },
+        "notes": "Installation service required",
+        "createdAt": "2024-03-16T00:00:00.000Z",
+        "updatedAt": "2024-03-16T00:00:00.000Z"
+    },
+    {
+        "_id": "ORD003",
+        "orderNumber": "ORD-2024-003",
+        "customer": {
+            "_id": "CUST003",
+            "companyName": "Innovative Designs Ltd",
+            "name": "Michael Chen",
+            "email": "michael.chen@innodesign.com",
+            "phone": "+1 (555) 456-7890",
+            "address": {
+                "street": "789 Design Blvd",
+                "city": "New York",
+                "state": "NY",
+                "country": "USA",
+                "zipCode": "10001"
+            }
+        },
+        "items": [
+            {
+                "productId": "PROD004",
+                "productName": "3D Printer",
+                "quantity": 2,
+                "price": 3499.99
+            },
+            {
+                "productId": "PROD005",
+                "productName": "CAD Software License",
+                "quantity": 5,
+                "price": 499.99
+            }
+        ],
+        "totalAmount": 9499.93,
+        "status": "SHIPPED",
+        "paymentStatus": "PAID",
+        "shippingAddress": {
+            "street": "789 Design Blvd",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA",
+            "zipCode": "10001"
+        },
+        "notes": "Express shipping",
+        "createdAt": "2024-03-17T00:00:00.000Z",
+        "updatedAt": "2024-03-18T00:00:00.000Z"
+    },
+    {
+        "_id": "ORD004",
+        "orderNumber": "ORD-2024-004",
+        "customer": {
+            "_id": "CUST004",
+            "companyName": "Quality Products Corp",
+            "name": "Emily Davis",
+            "email": "emily.davis@qualityproducts.com",
+            "phone": "+1 (555) 234-5678",
+            "address": {
+                "street": "321 Quality Lane",
+                "city": "Boston",
+                "state": "MA",
+                "country": "USA",
+                "zipCode": "02108"
+            }
+        },
+        "items": [
+            {
+                "productId": "PROD006",
+                "productName": "Quality Control System",
+                "quantity": 1,
+                "price": 7999.99
+            }
+        ],
+        "totalAmount": 7999.99,
+        "status": "DELIVERED",
+        "paymentStatus": "PAID",
+        "shippingAddress": {
+            "street": "321 Quality Lane",
+            "city": "Boston",
+            "state": "MA",
+            "country": "USA",
+            "zipCode": "02108"
+        },
+        "notes": "Training session scheduled",
+        "createdAt": "2024-03-19T00:00:00.000Z",
+        "updatedAt": "2024-03-20T00:00:00.000Z"
+    },
+    {
+        "_id": "ORD005",
+        "orderNumber": "ORD-2024-005",
+        "customer": {
+            "_id": "CUST005",
+            "companyName": "Advanced Systems LLC",
+            "name": "David Wilson",
+            "email": "david.wilson@advancedsys.com",
+            "phone": "+1 (555) 876-5432",
+            "address": {
+                "street": "654 System Drive",
+                "city": "Seattle",
+                "state": "WA",
+                "country": "USA",
+                "zipCode": "98101"
+            }
+        },
+        "items": [
+            {
+                "productId": "PROD007",
+                "productName": "AI Processing Unit",
+                "quantity": 4,
+                "price": 2499.99
+            },
+            {
+                "productId": "PROD008",
+                "productName": "Machine Learning Software",
+                "quantity": 4,
+                "price": 999.99
+            }
+        ],
+        "totalAmount": 13999.92,
+        "status": "CANCELLED",
+        "paymentStatus": "REFUNDED",
+        "shippingAddress": {
+            "street": "654 System Drive",
+            "city": "Seattle",
+            "state": "WA",
+            "country": "USA",
+            "zipCode": "98101"
+        },
+        "notes": "Customer requested cancellation",
+        "createdAt": "2024-03-21T00:00:00.000Z",
+        "updatedAt": "2024-03-22T00:00:00.000Z"
+    }
+]

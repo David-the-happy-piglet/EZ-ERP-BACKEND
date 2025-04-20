@@ -1,0 +1,82 @@
+[
+    {
+        "_id": "CUST001",
+        "companyName": "Tech Solutions Inc.",
+        "name": "John Smith",
+        "email": "john.smith@techsolutions.com",
+        "phone": "+1 (555) 123-4567",
+        "address": {
+            "street": "123 Tech Street",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA",
+            "zipCode": "94105"
+        },
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+        "_id": "CUST002",
+        "companyName": "Global Manufacturing Co.",
+        "name": "Sarah Johnson",
+        "email": "sarah.j@globalmfg.com",
+        "phone": "+1 (555) 987-6543",
+        "address": {
+            "street": "456 Industry Ave",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "zipCode": "60601"
+        },
+        "createdAt": "2024-01-15T00:00:00.000Z",
+        "updatedAt": "2024-01-15T00:00:00.000Z"
+    },
+    {
+        "_id": "CUST003",
+        "companyName": "Innovative Designs Ltd",
+        "name": "Michael Chen",
+        "email": "michael.chen@innodesign.com",
+        "phone": "+1 (555) 456-7890",
+        "address": {
+            "street": "789 Design Blvd",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA",
+            "zipCode": "10001"
+        },
+        "createdAt": "2024-02-01T00:00:00.000Z",
+        "updatedAt": "2024-02-01T00:00:00.000Z"
+    },
+    {
+        "_id": "CUST004",
+        "companyName": "Quality Products Corp",
+        "name": "Emily Davis",
+        "email": "emily.davis@qualityproducts.com",
+        "phone": "+1 (555) 234-5678",
+        "address": {
+            "street": "321 Quality Lane",
+            "city": "Boston",
+            "state": "MA",
+            "country": "USA",
+            "zipCode": "02108"
+        },
+        "createdAt": "2024-02-15T00:00:00.000Z",
+        "updatedAt": "2024-02-15T00:00:00.000Z"
+    },
+    {
+        "_id": "CUST005",
+        "companyName": "Advanced Systems LLC",
+        "name": "David Wilson",
+        "email": "david.wilson@advancedsys.com",
+        "phone": "+1 (555) 876-5432",
+        "address": {
+            "street": "654 System Drive",
+            "city": "Seattle",
+            "state": "WA",
+            "country": "USA",
+            "zipCode": "98101"
+        },
+        "createdAt": "2024-03-01T00:00:00.000Z",
+        "updatedAt": "2024-03-01T00:00:00.000Z"
+    }
+]

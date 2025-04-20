@@ -1,0 +1,98 @@
+[
+    {
+        "_id": "MSG-2024-001",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-001",
+        "messageType": "new order",
+        "messageTitle": "New Order Received",
+        "messageContent": "New order from Tech Solutions Inc. for Industrial Sensors and Control Panels. Total amount: $2,499.93",
+        "postedBy": "david",
+        "postDate": "2024-03-15T10:00:00.000Z",
+        "read": false
+    },
+    {
+        "_id": "MSG-2024-002",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-001",
+        "messageType": "order status change",
+        "messageTitle": "Order Processing Started",
+        "messageContent": "Order ORD-2024-001 is now being processed. Priority shipping requested.",
+        "postedBy": "taiwei",
+        "postDate": "2024-03-15T11:30:00.000Z",
+        "read": true
+    },
+    {
+        "_id": "MSG-2024-003",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-002",
+        "messageType": "new order",
+        "messageTitle": "New Order with Installation Request",
+        "messageContent": "New order from Global Manufacturing Co. for Robotic Arms. Installation service required. Total amount: $5,999.97",
+        "postedBy": "wenjie",
+        "postDate": "2024-03-16T09:15:00.000Z",
+        "read": false
+    },
+    {
+        "_id": "MSG-2024-004",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-003",
+        "messageType": "order update",
+        "messageTitle": "Order Shipped",
+        "messageContent": "Order ORD-2024-003 has been shipped via express delivery. Tracking number: EX123456789",
+        "postedBy": "david",
+        "postDate": "2024-03-18T14:20:00.000Z",
+        "read": true
+    },
+    {
+        "_id": "MSG-2024-005",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-004",
+        "messageType": "order status change",
+        "messageTitle": "Order Delivered",
+        "messageContent": "Order ORD-2024-004 has been delivered. Training session scheduled for next week.",
+        "postedBy": "taiwei",
+        "postDate": "2024-03-20T16:45:00.000Z",
+        "read": false
+    },
+    {
+        "_id": "MSG-2024-006",
+        "orderRelated": true,
+        "orderNumber": "ORD-2024-005",
+        "messageType": "order update",
+        "messageTitle": "Order Cancellation Request",
+        "messageContent": "Customer has requested cancellation of order ORD-2024-005. Refund process initiated.",
+        "postedBy": "wenjie",
+        "postDate": "2024-03-22T10:30:00.000Z",
+        "read": true
+    },
+    {
+        "_id": "MSG-2024-007",
+        "orderRelated": false,
+        "messageType": "others",
+        "messageTitle": "System Maintenance Notice",
+        "messageContent": "Scheduled system maintenance will occur on March 25, 2024, from 2:00 AM to 4:00 AM EST.",
+        "postedBy": "david",
+        "postDate": "2024-03-23T09:00:00.000Z",
+        "read": false
+    },
+    {
+        "_id": "MSG-2024-008",
+        "orderRelated": false,
+        "messageType": "others",
+        "messageTitle": "New Feature Announcement",
+        "messageContent": "New reporting dashboard feature has been added. Please check the updates section for more details.",
+        "postedBy": "wenjie",
+        "postDate": "2024-03-24T11:30:00.000Z",
+        "read": true
+    },
+    {
+        "_id": "MSG-2024-009",
+        "orderRelated": false,
+        "messageType": "others",
+        "messageTitle": "Training Session Reminder",
+        "messageContent": "Monthly training session for new employees will be held on March 28, 2024, at 10:00 AM in Conference Room A.",
+        "postedBy": "taiwei",
+        "postDate": "2024-03-25T14:15:00.000Z",
+        "read": false
+    }
+]
