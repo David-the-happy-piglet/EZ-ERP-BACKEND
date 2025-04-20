@@ -143,12 +143,54 @@ export const getProfile = async (req, res) => {
     }
 };
 
+// Change user password
+export const changePassword = async (req, res) => {
+    try {
+        // Check if user is authenticated
+        if (!req.session.user || !req.session.user.id) {
+            return res.status(401).json({ message: 'Not authenticated' });
+        }
+
+        const { oldPassword, newPassword } = req.body;
+
+        // Validate input
+        if (!oldPassword || !newPassword) {
+            return res.status(400).json({ message: 'Old password and new password are required' });
+        }
+
+        // Validate password strength
+        if (newPassword.length < 3) {
+            return res.status(400).json({ message: 'New password must be at least 3 characters long' });
+        }
+
+        // Get user
+        const user = await userDAO.getUserById(req.session.user.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Check if old password is correct - plain text comparison
+        if (oldPassword !== user.password) {
+            return res.status(401).json({ message: 'Current password is incorrect' });
+        }
+
+        // Update password
+        await userDAO.updateUserPassword(user._id, newPassword);
+
+        res.status(200).json({ message: 'Password changed successfully' });
+    } catch (error) {
+        console.error('Change password error:', error);
+        res.status(500).json({ message: error.message || 'Error changing password' });
+    }
+};
+
 // Logout user
 export const logout = (req, res) => {
-    req.session.destroy((err) => {
+    req.session.destroy(err => {
         if (err) {
-            return res.status(500).json({ error: 'Error logging out' });
+            return res.status(500).json({ message: 'Failed to logout' });
         }
-        res.json({ message: 'Logged out successfully' });
+        res.clearCookie('connect.sid');
+        res.status(200).json({ message: 'Logged out successfully' });
     });
 }; 
