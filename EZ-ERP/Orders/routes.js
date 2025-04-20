@@ -6,11 +6,11 @@ const router = express.Router();
 
 // Middleware to validate order data
 const validateOrderData = (req, res, next) => {
-    const { orderNumber, customer, items, totalAmount } = req.body;
+    const { orderNumber, customer, items, totalAmount, description } = req.body;
 
     // Required fields validation
-    if (!orderNumber || !customer || !items || !totalAmount) {
-        return res.status(400).json({ error: 'Order number, customer, items, and total amount are required' });
+    if (!orderNumber || !customer || !items || !totalAmount || !description) {
+        return res.status(400).json({ error: 'Order number, customer, items, total amount, and description are required' });
     }
 
     // Validate customer data

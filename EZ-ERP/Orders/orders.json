@@ -2,6 +2,7 @@
     {
         "_id": "ORD001",
         "orderNumber": "ORD-2024-001",
+        "description": "Industrial sensors and control panels for factory automation",
         "customer": {
             "_id": "CUST001",
             "companyName": "Tech Solutions Inc.",
@@ -48,6 +49,7 @@
     {
         "_id": "ORD002",
         "orderNumber": "ORD-2024-002",
+        "description": "Robotic arm for assembly line automation",
         "customer": {
             "_id": "CUST002",
             "companyName": "Global Manufacturing Co.",
@@ -88,6 +90,7 @@
     {
         "_id": "ORD003",
         "orderNumber": "ORD-2024-003",
+        "description": "3D printing and CAD software for product design",
         "customer": {
             "_id": "CUST003",
             "companyName": "Innovative Designs Ltd",
@@ -134,6 +137,7 @@
     {
         "_id": "ORD004",
         "orderNumber": "ORD-2024-004",
+        "description": "Quality control system for manufacturing process",
         "customer": {
             "_id": "CUST004",
             "companyName": "Quality Products Corp",
@@ -174,6 +178,7 @@
     {
         "_id": "ORD005",
         "orderNumber": "ORD-2024-005",
+        "description": "AI processing units and machine learning software for data analysis",
         "customer": {
             "_id": "CUST005",
             "companyName": "Advanced Systems LLC",

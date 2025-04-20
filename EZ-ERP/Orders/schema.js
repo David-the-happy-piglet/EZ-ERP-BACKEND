@@ -32,9 +32,14 @@ const orderSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+
     customer: {
         type: customerSchema,
         required: true
+    },
+    description: {
+        type: String,
+        required: true,
     },
     items: [{
         productId: {
@@ -81,16 +86,20 @@ const orderSchema = new mongoose.Schema({
     },
     dueDate: {
         type: Date,
-        required: true
+        required: true,
+        get: (date) => date ? date.toISOString() : null,
+        set: (date) => date ? new Date(date) : null
     },
     notes: String,
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (date) => date ? date.toISOString() : null
     },
     updatedAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (date) => date ? date.toISOString() : null
     }
 },
     { collection: 'orders' });

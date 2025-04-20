@@ -6,6 +6,11 @@ class OrderDAO {
     // Create a new order
     async createOrder(orderData) {
         try {
+            // Validate required fields
+            if (!orderData.description) {
+                throw new Error('Order description is required');
+            }
+
             const order = new Order({
                 ...orderData,
                 _id: orderData._id || `ORD-${uuidv4().substring(0, 8)}`,
