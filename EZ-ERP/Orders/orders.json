@@ -40,6 +40,7 @@
             "country": "USA",
             "zipCode": "94105"
         },
+        "dueDate": "2024-04-14T00:00:00.000Z",
         "notes": "Priority shipping requested",
         "createdAt": "2024-03-15T00:00:00.000Z",
         "updatedAt": "2024-03-15T00:00:00.000Z"
@@ -79,6 +80,7 @@
             "country": "USA",
             "zipCode": "60601"
         },
+        "dueDate": "2024-04-15T00:00:00.000Z",
         "notes": "Installation service required",
         "createdAt": "2024-03-16T00:00:00.000Z",
         "updatedAt": "2024-03-16T00:00:00.000Z"
@@ -124,6 +126,7 @@
             "country": "USA",
             "zipCode": "10001"
         },
+        "dueDate": "2024-04-16T00:00:00.000Z",
         "notes": "Express shipping",
         "createdAt": "2024-03-17T00:00:00.000Z",
         "updatedAt": "2024-03-18T00:00:00.000Z"
@@ -163,6 +166,7 @@
             "country": "USA",
             "zipCode": "02108"
         },
+        "dueDate": "2024-04-18T00:00:00.000Z",
         "notes": "Training session scheduled",
         "createdAt": "2024-03-19T00:00:00.000Z",
         "updatedAt": "2024-03-20T00:00:00.000Z"
@@ -208,6 +212,7 @@
             "country": "USA",
             "zipCode": "98101"
         },
+        "dueDate": "2024-04-20T00:00:00.000Z",
         "notes": "Customer requested cancellation",
         "createdAt": "2024-03-21T00:00:00.000Z",
         "updatedAt": "2024-03-22T00:00:00.000Z"

@@ -79,6 +79,10 @@ const orderSchema = new mongoose.Schema({
         country: String,
         zipCode: String
     },
+    dueDate: {
+        type: Date,
+        required: true
+    },
     notes: String,
     createdAt: {
         type: Date,
