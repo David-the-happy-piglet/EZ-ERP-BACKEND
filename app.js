@@ -17,7 +17,7 @@ const app = express();
 
 // Enable CORS for all routes with more permissive settings
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'], // Allow both localhost variations
+    origin: ['http://localhost:5173', 'https://resonant-hamster-13b9dd.netlify.app'], // Allow both localhost variations
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
