@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+
 import authRoutes from './EZ-ERP/routes/authRoutes.js';
 import orderRoutes from './EZ-ERP/Orders/routes.js';
 import customerRoutes from './EZ-ERP/Customers/routes.js';
@@ -15,72 +16,80 @@ dotenv.config();
 
 const app = express();
 
-// Enable CORS for all routes with more permissive settings
-app.use(cors({
-    origin: ['http://localhost:5173', 'https://resonant-hamster-13b9dd.netlify.app'], // Allow both localhost variations
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
-    exposedHeaders: ['Content-Range', 'X-Content-Range'],
-    maxAge: 600, // Cache preflight requests for 10 minutes
-    preflightContinue: false,
-    optionsSuccessStatus: 204
-}));
+const startServer = async () => {
+    try {
+        // ✅ 1. Connect to MongoDB first
+        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ez-erp');
+        console.log('✅ Connected to MongoDB');
 
-// Handle preflight requests
-app.options('*', cors());
+        // ✅ 2. Create MongoStore AFTER Mongo is connected
+        const mongoStore = MongoStore.create({
+            mongoUrl: process.env.MONGODB_URI,
+            collectionName: 'sessions',
+            ttl: 24 * 60 * 60
+        });
 
-// Add security headers
-app.use((req, res, next) => {
-    res.header('Content-Security-Policy', "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;");
-    next();
-});
+        // ✅ 3. Set up CORS (Netlify + localhost)
+        app.use(cors({
+            origin: ['http://localhost:5173', 'https://resonant-hamster-13b9dd.netlify.app'],
+            credentials: true,
+            methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+            allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+            exposedHeaders: ['Content-Range', 'X-Content-Range'],
+            maxAge: 600,
+            preflightContinue: false,
+            optionsSuccessStatus: 204
+        }));
+        app.options('*', cors());
 
-// Middleware
-app.use(express.json());
+        // ✅ 4. Add security headers
+        app.use((req, res, next) => {
+            res.header('Content-Security-Policy', "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;");
+            next();
+        });
 
-// Session configuration
-app.use(session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key',
-    resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost:27017/ez-erp',
-        collectionName: 'sessions',
-        ttl: 24 * 60 * 60 // 24 hours
-    }),
-    cookie: {
-        secure: true,//process.env.NODE_ENV === 'production',
-        httpOnly: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+        app.use(express.json());
+
+        // ✅ 5. Use session AFTER MongoStore is ready
+        app.use(session({
+            secret: process.env.SESSION_SECRET || 'your-secret-key',
+            resave: false,
+            saveUninitialized: false,
+            store: mongoStore,
+            cookie: {
+                secure: true,                 // MUST be true for HTTPS (Netlify)
+                httpOnly: true,
+                sameSite: 'none',             // MUST be none for cross-site cookies
+                maxAge: 24 * 60 * 60 * 1000   // 24 hours
+            }
+        }));
+
+        // ✅ 6. Debug middleware
+        app.use((req, res, next) => {
+            console.log('Session ID:', req.sessionID);
+            console.log('Session data:', req.session);
+            next();
+        });
+
+        // ✅ 7. Mount routes
+        app.use('/api/auth', authRoutes);
+        app.use('/api/orders', orderRoutes);
+        app.use('/api/customers', customerRoutes);
+        app.use('/api/messages', messageRoutes);
+        app.use('/api/tasks', taskRoutes);
+        app.use('/api/users', userRoutes);
+
+        // ✅ 8. Start server
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`🚀 Server running on port ${PORT}`);
+        });
+
+    } catch (err) {
+        console.error('❌ Failed to start server:', err);
     }
-}));
+};
 
-// Add session debug middleware
-app.use((req, res, next) => {
-    console.log('Session middleware - Session ID:', req.sessionID);
-    console.log('Session middleware - Session:', req.session);
-    next();
-});
-
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/customers', customerRoutes);
-app.use('/api/messages', messageRoutes);
-app.use('/api/tasks', taskRoutes);
-app.use('/api/users', userRoutes);
-
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ez-erp')
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+startServer();
 
 export default app;
