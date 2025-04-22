@@ -49,6 +49,7 @@ const startServer = async () => {
         });
 
         app.use(express.json());
+        app.set('trust proxy', 1);
 
         // ✅ 5. Use session AFTER MongoStore is ready
         app.use(session({
