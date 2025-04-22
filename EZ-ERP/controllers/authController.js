@@ -94,17 +94,27 @@ export const login = async (req, res) => {
         console.log('Session ID:', req.sessionID);
 
         // Return user info
-        res.json({
-            user: {
-                id: user._id,
-                username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
-                email: user.email,
-                dob: user.dob,
-                role: user.role
+        req.session.save((err) => {
+            if (err) {
+                console.error('Session save failed:', err);
+                return res.status(500).json({ error: 'Session not saved' });
             }
+
+            console.log('Session saved successfully:', req.session);
+
+            res.json({
+                user: {
+                    id: user._id,
+                    username: user.username,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                    dob: user.dob,
+                    role: user.role
+                }
+            });
         });
+
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
